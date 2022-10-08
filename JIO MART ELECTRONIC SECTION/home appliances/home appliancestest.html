@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Appliances - JioMart</title>
+    <script src="https://kit.fontawesome.com/b4a455d26a.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    #headdiv{
+        width: 100%;
+        height: 40px;
+        background-color: #f3f3f3;
+        display: flex;
+        align-items: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 12px;
+     }
+     #headdiv>a{
+        color: black;
+     }
+/* main product box */
+     #mainprodbox{
+         width: 100%;
+         display: flex;
+         background-color: #ebebec;
+     }
+/* left box css */
+    #mainprodbox #leftbox{
+         width: 18%;
+     }
+     #filterbox{
+         background-color: #ffffff;
+         height: 500px;
+         width: 80%;
+         margin-left: 10px;
+         border-radius: 14px;
+         padding: 15px;
+     }
+     #filterbox>h2{
+         font-family: sans-serif;
+         font-weight: lighter ;
+     }
+     input[type="search"]
+     {
+         height: 40px;
+         font-size: 14px;
+         background-color: rgba(10,21,27,.05);
+         color: #6f7284;
+         border-top-left-radius: 6px;
+         border-bottom-left-radius: 6px;
+         border: none;
+         width: 90%;
+     }
+     #searchbox{
+         width: 100%;
+         display: flex;
+         background-color:  rgba(10,21,27,.05);
+     }
+     #searchbtn{
+         border: none;
+         box-sizing: border-box;
+         border-top-right-radius: 6px;
+         border-bottom-right-radius: 6px;
+         background-color: rgba(10,21,27,.05);
+     }
+     /* #mainprodbox #leftbox>div{
+         width: 90%;
+         background-color:white;
+     } */
+
+/* right box upper banner css */
+     #rightbox{
+         margin-left: 20px;
+         width: 81%;
+     }
+     #bannerimg{
+        width: 100%;
+        height: 200px;
+        padding-bottom: 20px;
+        position: relative;
+     }
+     .charles_txt{
+        position: absolute;
+        font-size: 40px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        top: 30px;
+        left: 30px;
+    }
+   
+/* >>>>>>>>>>>>>>>tool display<<<<<<<<<<<<<<<<<< */
+     #tooldisplay{
+         display: flex;
+         font-family: sans-serif;
+         align-items: center;
+         margin-bottom: 20px;
+     }
+     #TotProdonPage>span{
+         font-weight: bold;
+         font-size: 18px;
+     }
+     
+     #tooldisplay #sorting{
+         display: flex;
+         margin-left: 400px;
+         position: absolute;
+         align-items: center;
+     }
+     #tooldisplay #sorting button{
+         margin-left: 20px;
+         padding: 5px 16px 5px 16px;
+         cursor: pointer;
+         border-radius: 5px;
+         border: 1px solid #edeef0;
+         background-color: #fff;
+     }
+     #tooldisplay #sorting button:hover{
+         border:1px solid #70cef7;
+         color: #70cef7;
+        font-weight: 100;
+     }
+
+/* >>>>>>>>>>>>>>>>>>>product display box */
+     #productdisplay{
+        margin: auto;
+        background-color: white;
+        box-sizing: border-box;
+        padding-right: 10px;
+        padding-left: 10px;
+        display: block;
+        
+    }
+
+    #productdisplay #displayid{
+        display: block;
+    }
+    #productdisplay h4{
+        font-family: sans-serif;
+        color: rgba(21,27,57,.6);
+        padding-top: 10px;
+        display: block;
+    }
+/*>>>>>>>>>>>>>>> gird box */
+    #gridbox{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 10px;
+    }
+    
+   .maindiv{
+        border: 1px gray;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        border-radius: 10px;
+        padding: 10px;
+        text-align: center;
+    }
+    .divimg{
+        width: 80%;
+        
+    }
+    .divimg>img{
+        width: 100%;
+        margin-left: 80px;
+    }
+    #gridbox h5+.maindiv{
+        align-items: center;
+        display: flex;
+        margin-right:50px;
+        vertical-align: middle;
+    }
+    #gridbox h5{
+        text-align: left;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        overflow: hidden;
+        max-height: 32px;
+        font-family: sans-serif;
+        color: black;
+    }
+    .headdiv{
+        width: 90%;
+        margin: auto;
+        margin-bottom: 0px;
+    }
+    /* #gridbox img{
+        width: 100%;
+    } */
+    #gridbox img:hover{
+      transform: scale(1.05);
+      transition: 0.2s;
+    }
+    #gridbox h5+div>p:first-child{
+        text-decoration: line-through;
+    }
+    .divmrp{
+        display: flex;
+        text-align: center;
+        align-items: center;
+        width: 90%;
+        margin: auto;
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+    .spanmrp,.strikeprice{
+        font-family: sans-serif;
+        font-size: 12px;
+    }
+    .strikeprice{
+        text-decoration: line-through;
+        margin-left: 5px;
+        font-weight: 100;
+    }
+    .newprice{
+        margin-left: 5px;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+    .divbtn{
+        background: #008ecc;
+        width: 80%;
+        margin: auto;
+        font-size: 16px;
+        border-radius: 4px;
+        padding: 0 8px 0 16px;
+        border: 0;
+        color: #fff;
+        font-family: sans-serif;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        line-height: 32px;
+    }
+    #gridbox button{
+        background: #008ecc;
+        width: 100%;
+        font-size: 16px;
+        border-radius: 4px;
+        padding: 0 8px 0 16px;
+        border: 0;
+        color: #fff;
+        font-family: sans-serif;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        line-height: 32px;
+    }
+    .divicon{
+        width: 20%;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.153)
+    }
+
+    .divbtn:hover{
+        background-color:rgb(59, 152, 219);
+    }
+
+    #gridbox button:hover{
+        background-color:rgb(59, 152, 219);
+    }
+
+    * a{
+        text-decoration: none !important;
+    }
+
+    p{
+       font-family: sans-serif;
+       margin-top: 10px;
+       margin-bottom: 10px;
+       color: black;
+    }
+
+    .discdiv{
+        z-index: 9;
+        width: 40px;
+        height: 40px;
+        background-color: red;
+    }
+
+    .prodcategory{
+        display: flex;
+    }
+    #clear{
+        margin-top: 20px;
+        border-radius: 4px;
+        background-color: bisque;
+        border: none;
+        width: 80%;
+        padding: 5px 5px;
+        font-weight: bold;
+    }
+    #clear:hover{
+        background-color:darkgrey;
+    }
+    
+</style>
+<body>
+    <!-- product page -->
+    <!--************1. Collaborators>> change header ***********  -->
+    <div id="headdiv">
+        <a href="">Home ></a>
+        <a href="">All Categories ></a>
+        <a href="">Electronics ></a>
+        <a href="">Home Appliances</a>
+    </div>
+    <!-- main product box -->
+    <div id="mainprodbox">
+        <!-- left of main box -->
+        <div id="leftbox">
+            <div id="filterbox">
+                <h2>Filters</h2>
+                <p>Categories</p>
+                <div id="searchbox">
+                    <input id="search" type="search" placeholder="Search...">
+                    <button id="searchbtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+    <!--************2. Collaborators make your input boxes here ***********  -->
+                <div class="prodcategory">
+                    <input id="apple" type="checkbox" value="ironbox">
+                    <p>Ironbox</p>
+                </div>
+                <div class="prodcategory">
+                    <input id="pear" type="checkbox" value="fan">
+                    <p>Fan</p>
+                </div>
+        <!--************   ends here       ***********  -->
+                <button id="clear" onclick="clearall">Clear all filters</button>
+        </div>
+        </div>
+        <!-- right of main box -->
+        <div id="rightbox">
+        <!--************3. Collaborators>> change image ***********  -->
+            <div id="bannerimg">
+                <img src="https://www.jiomart.com/assets/global/verticals/fashion_default_banner.svg" alt="bannerimg">
+                <div class="charles_txt">HOME APPLIANCES</div>
+            </div>
+            <div id="tooldisplay">
+                <div id="TotProdonPage">Showing <span id="num"></span> of <span id="totalcount"></span>items</div>
+                <div id="sorting">
+                    Sort by:
+                    <button id="hightolow" onclick="hightolow()">High to Low</button>
+                    <button id="lowtohigh" onclick="lowtohigh()">Low to High</button>
+                    <button id="popular" onclick="popular()">Popularity</button>
+                    <button id="discount" onclick="discount()">Discount</button>
+                </div>
+            </div>
+            <!-- product display -->
+            <div id="productdisplay">
+                <div id="displayid">
+                <h4>All Products</h4>
+                </div>
+                <div id="gridbox">
+
+                    </div>
+                </div>
+                <div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<script>
+// <!--************4. Collaborators>> input product data here ***********  -->
+    var homeappliancesdata = [
+    {
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/492664307/lifelong-lldi09-1100-watts-dry-iron-blue-and-white-digital-o492664307-p590996601-0-202207061810.jpeg",
+      detail: "Lifelong LLDI09 1100 Watts Dry Iron, Blue and White",
+      price: "1999",
+      strikedoffprice: "4990",
+      name:"ironbox",
+    },
+    {
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/rv9pclsusj/longway-creta-p1-1200-mm-remote-controlled-3-blade-ceiling-fan-golden-pack-of-1-product-images-orv9pclsusj-p592285820-0-202207121308.jpg",
+      detail: "BPL BFCB-1204BR 1200 mm High Speed Ceiling Fan, Brown",
+      price: 999,
+      strikedoffprice: 2100,
+      name:"fan",
+    },
+    {
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/rvyrt0jrm5/zigma-sonic-deco-900-mm-3-blade-anti-dust-ceiling-fan-brown-product-images-orvyrt0jrm5-p593217391-0-202207282337.jpg",
+      detail: " Zigma Sonic Deco 900 Mm 3 Blade Anti-Dust Ceiling Fan, Brown",
+      price: 1099,
+      strikedoffprice: 2199,
+      name:"fan",
+    },
+    {
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/rvpa4u2zvp/akiara-makes-life-easy-mini-sewing-machine-with-handy-sewing-kit-and-thread-scissors-needle-white-product-images-orvpa4u2zvp-p592728024-0-202207171626.jpg",
+      detail: "Akiara- Makes Life Easy Mini Sewing Machine With Handy Sewing Kit And Thread Scissors, Needle, White",
+      price: 1348,
+      strikedoffprice: 1459,
+      name:"fan",
+    },
+    {
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/492664434/lg-7-kg-top-load-semi-automatic-washing-machine-p7020ngaz-digital-o492664434-p591053951-0-202202221325.jpeg",
+      detail: "LG 7 Kg Top Load Semi-Automatic Washing Machine, P7020NGAZ",
+      price: 8499,
+      strikedoffprice: 12299,
+      name:"fan",
+    },
+    {
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/rv9pclsusj/longway-creta-p1-1200-mm-remote-controlled-3-blade-ceiling-fan-golden-pack-of-1-product-images-orv9pclsusj-p592285820-0-202207121308.jpg",
+      detail: " Longway Creta P1 1200 mm Remote Controlled 3 Blade Ceiling Fan (Golden, Pack of 1) ",
+      price: 1299,
+      strikedoffprice: 3789,
+      name:"fan",
+    },
+    {
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/rvit7qyshr/tahiro-random-colour-light-weight-electric-750-watt-dry-iron-product-images-orvit7qyshr-p592920105-0-202207222202.jpg",
+      detail: "Tahiro Random Colour Light Weight Electric 750 Watt Dry Iron",
+      price: 699,
+      strikedoffprice: 1299,
+      name:"ironbox",
+    },
+    {
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/492664303/prestige-pdi-07-1000-watts-magic-dry-iron-blue-digital-o492664303-p590996588-0-202201112232.jpeg",
+      detail: "Prestige PDI 07 1000 Watts Magic Dry Iron, Blue",
+      price: 659,
+      strikedoffprice: 1025,
+      name:"fan",
+    },
+    {
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/492911083/sansui-6-5-kg-top-load-fully-automatic-washing-machine-jsp65ftl-2024b-ash-grey-digital-o492911083-p592167319-0-202206222121.jpeg",
+      detail: "Sansui 6.5 Kg Top Load Fully Automatic Washing Machine, JSP65FTL-2024B, Ash Grey",
+      price: 14999,
+      strikedoffprice: 18999,
+      name:"ironbox",
+    },
+    {
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/rvfa1e5soj/figment-2-in-1-vacuum-cleaner-dust-collection-lighting-car-vacuum-cleaner-120w-high-power-handheld-wireless-vacuum-cleaner-home-car-dual-use-portable-gun-vacuum-product-images-orvfa1e5soj-p592567054-0-202207140455.jpg",
+      detail: "Figment 2 in 1 Vacuum Cleaner Dust Collection/Lighting Car Vacuum Cleaner ",
+      price: 899,
+      strikedoffprice: 2499,
+      name:"ironbox",
+    },
+    {
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/rvnoub1luz/figment-portable-and-high-power-plastic-12v-car-vacuum-cleaner-4500pa-stronger-suction-for-car-vacuum-cleaner-wet-and-dry-vacuum-cleaner-car-car-vacuums-cleaner-yellow-switch-product-images-orvnoub1luz-p592550694-0-202207131501.jpg",
+      detail: "FIGMENT Portable and High Power Plastic 12V Car Vacuum Cleaner ",
+      price: 1299,
+      strikedoffprice: 1899,
+      name:"ironbox",
+    },
+    {
+      image_url:
+        "https://www.jiomart.com/images/product/150x150/rvt13s0ngl/florence-3-blade-1200mm-ceiling-fan-silver-blue-pack-of-2-product-images-orvt13s0ngl-p593220760-0-202207290051.jpg",
+      detail: "Florence 3 Blade 1200Mm Ceiling Fan, Silver, Blue (Pack Of 2)",
+      price: 3099,
+      strikedoffprice: 5899,
+      name:"fan",
+    },
+    ];
+// <!--************   ends here    ***********  -->
+    display(homeappliancesdata);
+    document.getElementById("num").append(homeappliancesdata.length);
+    // Search sorting>>>>>>>>>>>>>>>
+    document.getElementById("searchbtn").addEventListener("click",search);
+    function search(){
+        document.getElementById("num").innerText="";
+        var searchItem = document.getElementById("search").value;
+        var out = homeappliancesdata.filter(function(ele){
+            if(searchItem===""){
+                return 1;
+            }else{
+                return ele.name===searchItem;
+            }
+        })
+            display(out)
+            totalproductonpage=out.length;
+            document.getElementById("num").append(totalproductonpage);
+    }
+    
+    // category sorting>>>>>>>>>>>>>>>>>>>>>>
+    document.getElementById("apple").addEventListener("click",select1);
+    function select1(){
+        document.getElementById("num").innerText="";
+        var selected = document.getElementById("apple").value;
+        console.log(selected)
+        var out = homeappliancesdata.filter(function(ele){
+            if(selected===""){
+                return 1;
+            }else{
+                return ele.name===selected; 
+            } 
+        })
+        display(out)
+        totalproductonpage=out.length;
+        document.getElementById("num").append(totalproductonpage);
+    }
+    document.getElementById("pear").addEventListener("click",select2);
+    function select2(){
+        document.getElementById("num").innerText="";
+        var selected = document.getElementById("pear").value;
+        console.log(selected)
+        var out = homeappliancesdata.filter(function(ele){
+            if(selected===""){
+                return 1;
+            }else{
+                return ele.name===selected; 
+            } 
+        })
+            display(out)
+            totalproductonpage=out.length;
+            document.getElementById("num").append(totalproductonpage);
+    }
+
+//    high low price sorting>>>>>>>>>>>>>>>>>>>
+    var sorted =[];
+    homeappliancesdata.forEach(function(ele,ind){
+        sorted.push(ele);
+    });
+    
+    function hightolow(){
+        sorted.sort(function(a,b){
+            return b.price-a.price;
+        })
+        display(sorted);
+    }
+   
+    function lowtohigh(){
+        sorted.sort(function(a,b){
+            return a.price-b.price;
+        })
+        display(sorted);
+    }
+// clear filters>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    document.getElementById("clear").addEventListener("click",clearall);
+    function clearall(){
+        document.getElementById("num").innerText="";
+        display(homeappliancesdata);
+        totalproductonpage=homeappliancesdata.length;
+        document.getElementById("num").append(totalproductonpage);
+    }
+    
+    // display(homeappliancesdata);
+function display(homeappliancesdata){
+    document.getElementById("gridbox").innerText="";
+
+    homeappliancesdata.map(function(ele,ind){
+    // <<<<<<<<<<<< New Element Creation >>>>>>>>>>>>>>>>>>>>
+        var divmain = document.createElement("div");
+        divmain.classList.add("maindiv");
+        var divimg = document.createElement("div"); 
+        divimg.classList.add("divimg");
+        var anchor = document.createElement("a")
+        var image = document.createElement("img");
+        var headdiv = document.createElement("div")
+        headdiv.classList.add("headdiv");
+        var h5 = document.createElement("h5");
+        var divmrp = document.createElement("div");
+        divmrp.classList.add("divmrp");
+        var strikeprice = document.createElement("p");
+        strikeprice.classList.add("strikeprice");
+        var newprice = document.createElement("p");
+        newprice.classList.add("newprice");
+        var spanmrp = document.createElement("span");
+        spanmrp.classList.add("spanmrp")
+        var divbtn = document.createElement("div");
+        divbtn.classList.add("divbtn")
+        var divicon = document.createElement("div");
+        divicon.classList.add("divicon");
+        var span1 = document.createElement("span");
+        var span2 = document.createElement("span");
+        var btn = document.createElement("button");
+        // var disc = document.createElement("div");
+        // discdiv.classList.add("discdiv");
+        // var spandisc = document.createElement("span")
+        // spandisc.classList.add("spandiscount");
+        
+        // spandisc.innerText="14% off" //take value from array
+        // disc.append(spandisc)
+
+    // <<<<<<<<<<<< Object Input Values >>>>>>>>>>>>>>>>>>>>
+        anchor.href="";
+        span2.innerHTML='<i class="fa-thin fa-plus"></i>'
+        image.setAttribute("src",ele.image_url)
+        h5.innerText = ele.detail;
+        spanmrp.innerText="M.R.P.:"
+        strikeprice.innerText = "₹"+ele.strikedoffprice;
+        newprice.innerText = "₹"+ele.price;
+        span1.innerText="Add to cart"
+    // <<<<<<<<<<<< Append >>>>>>>>>>>>>>>>>>>>
+        divimg.append(image);
+        divicon.append(span2);
+        btn.append(span1,divicon);
+        divmrp.append(spanmrp,strikeprice,newprice)
+        divbtn.append(btn);
+        headdiv.append(h5)
+        anchor.append(image,headdiv)
+        divmain.append(anchor,divmrp,divbtn)
+        document.getElementById("gridbox").append(divmain);
+        btn.addEventListener("click",function(){
+            addtocart(ind);
+        })
+    })
+}
+
+// total product on page count>>>>>>>>>>>>>>
+// document.getElementById("num").append(totalproductonpage);
+document.getElementById("totalcount").append(homeappliancesdata.length);
+
+// local storage to add to cart>>>>>>>>>>>>>>>>>>>>>>
+var cart = JSON.parse(localStorage.getItem("cartitems")) || [];
+function addtocart(i){
+    event.preventDefault();
+    var prod = homeappliancesdata.filter(function(ele,ind){
+        return ind===i;
+    })
+    cart.push(prod[0]);
+    alert("Item successfully added to cart")
+    localStorage.setItem("cartitems",JSON.stringify(cart));
+    
+}
+
+</script>

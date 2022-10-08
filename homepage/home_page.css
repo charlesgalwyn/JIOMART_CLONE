@@ -1,0 +1,401 @@
+#seperator{
+    width: 100%;
+    height: 90px;
+}
+
+/* ***************************ANUJ_MIDHA************************************* */
+
+#anuj_top_4 img{
+width: 100%;
+}
+.anuj_img{
+width:100%
+}
+#anuj_top_2{
+display: grid;
+grid-template-columns: repeat(5,1fr);
+gap: 10px;
+font-weight:900;
+font-family: sans-serif;
+}
+
+/* ******************************************NISHANT************************************************ */
+
+/* Shop from categories */
+#nishant_ShopCat{
+display: flex;
+justify-content: space-around;
+}
+#nishant_ShopCat>div{
+padding: 5px;
+width: 15%;
+margin-top: -20px;
+}
+#nishant_ShopCat>div img{
+width: 100%;
+}
+#nishant_ShopCat>div img:hover{
+transform: scale(1.05);
+transition: .3s;
+}
+h3{
+font-family: sans-serif;
+margin-left: 10px;
+padding: 8px 16px 16px 4px;
+color: #000;
+}
+
+/* Top Deals CSS */
+#nishant_TopDeals{
+display: flex;
+justify-content: space-around;
+}
+#nishant_TopDeals>div{
+padding: 5px;
+width: 15%;
+border-radius: 5px;
+border: 1px solid rgba(111,114,132,.25);
+box-sizing: border-box;
+}
+.nishant_tdProd{
+box-sizing: border-box;
+}
+#nishant_TopDeals .nishant_tdProd img:hover {
+transform: scale(1.05);
+transition: 0.2s;
+}
+#nishant_TopDeals .nishant_tdProd img {
+margin-left: 10px;
+border-style: none;
+max-width: 80%;
+
+
+}
+#nishant_TopDeals .nishant_tdProd .nishant_ProdName{
+overflow: hidden;
+line-height: 16px;
+min-height: 32px;
+max-height: 32px;
+font-size: 14px;
+display: block;
+color: black;
+font-variant: normal;
+font-family: sans-serif;
+font-weight: bold;
+margin-top: 5px;
+}
+a{
+text-decoration: none !important;
+}
+
+#nishant_TopDeals .nishant_tdPrice{
+margin-top: 10px;
+margin-bottom: 8px;
+font-size: 18px;
+font-family: sans-serif;
+font-weight: bold;
+
+}
+#nishant_TopDeals .nishant_tdPrice .nishant_mrp{
+display: block;
+font-size: 16px;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-weight:100;
+
+padding: 4px;
+}
+#nishant_TopDeals .nishant_tdPrice .save{
+display: block;
+font-size: 12px;
+font-family: Arial, Helvetica, sans-serif;
+font-weight:bold;
+color:  #00a100;
+padding: 4px;
+}
+
+.addtocart{
+width: 100%;
+float: left;
+height: 32px;
+display: flex;
+justify-content: flex-end;
+}
+.addtocart .addcartbtn{
+background: #008ecc;
+width: 100%;
+font-size: 14px;
+border-radius: 4px;
+padding: 0 8px 0 16px;
+border: 0;
+color: #fff;
+font-family: sans-serif;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: space-between;
+line-height: 32px;
+}
+
+.addtocart .addcartbtn .addsign {
+width: 20%;
+border-radius: 50%;
+background: rgba(255,255,255,.1)
+}
+
+/* Offers on daily essentials */
+#nishant_daily{
+display: grid;
+grid-template-columns: repeat(4,1fr);
+margin: auto;
+row-gap: 24px;
+margin-bottom: 30px;
+}
+#nishant_daily .nishant_dailybox {
+ margin-right: 16px;
+ float: left;
+ height: 100%;
+ background: #efd6da ;
+ border-radius: 15px;
+ position: relative;
+ box-sizing: border-box;
+} 
+#nishant_daily .nishant_dailybox .nishant_dailydisc {
+background: url(https://www.jiomart.com/assets/version1662053821/smartweb/images/offer_bg.png) no-repeat top center;
+padding: 8px 0px 0px;
+color: white;
+font-family: sans-serif;
+
+position: absolute;
+background-size: 100%;
+width: 100%;
+text-align: center;
+}
+#nishant_daily .nishant_dailyproduct {
+margin: 42px auto 16px;
+padding: 0 4px 0 4px;
+display: block;
+text-align: center;
+height: 100%;
+}
+#nishant_daily .nishant_dailyproduct .nishant_dailyimg{
+width: 70%;
+}
+#nishant_daily .nishant_dailyproduct:hover{
+transform: scale(1.05);
+transition: 0.2s;
+}
+#nishant_daily .nishant_dailyproduct .nishant_dailyprodname {
+color: #000;
+display: block;
+font-family: sans-serif;
+font-weight: bold;
+font-size: 18px;
+margin-top: 10px;
+padding-bottom: 20px;
+}
+/* Payment offers */
+#paymentoff{
+display: grid;
+grid-template-columns: repeat(2,1fr);
+margin: 24px 18px 50px;
+padding: 0 24px;
+text-align: center;
+
+}
+#paymentoff .paymentpart{
+margin-right: 16px;
+}
+#paymentoff img{
+width: 70%;
+}
+
+/* Shop by categories */
+#nishant_shopbycat{
+display: flex;
+justify-content: space-around;
+margin-top: -5px;
+}
+
+#nishant_shopbycat .nishant_shopcatbox{
+padding: 5px;
+width: 15%;
+border-radius: 5px;
+border: 1px solid rgba(111,114,132,.25);
+box-sizing: border-box;
+}
+.nishant_shopcatbox{
+box-sizing: border-box;
+text-align: center;
+}
+/* #nishant_shopbycat .nishant_shopcatbox:hover{
+box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+transform: scale(1.05);
+transition: 0.2s;
+} */
+#nishant_shopbycat .nishant_shopcatbox img:hover {
+transform: scale(1.05);
+transition: 0.2s;
+}
+#nishant_shopbycat .nishant_shopcatbox img {
+margin-left: 10px;
+border-style: none;
+max-width: 80%;
+margin-top: 12px;
+
+
+}
+#nishant_shopbycat .nishant_shopcatbox .nishant_shopcatname{
+overflow: hidden;
+line-height: 16px;
+height: 32px;
+font-size: 16px;
+display: block;
+color: #000;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-weight: bold;
+margin-top: 25px;
+}
+* a{
+text-decoration: none !important;
+}
+
+/* ********************************ANJALI*********************************** */
+#t-shirt{
+display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap:30px;
+  width: 100%;
+  text-align: center;
+
+ }
+ /* #t-shirt .zoom{
+    border-radius: 10px;
+    margin-bottom: 20px;
+   
+ } */
+ #t-shirt img{
+  width: 90%; 
+ }
+
+#t-shirt img:hover {
+transition: transform 0.2s;
+transform: scale(1.02);
+ }
+ 
+#jeans {
+    display: grid;
+  grid-template-columns: repeat(5,1fr);
+  gap:30px;
+  margin:20px;
+
+ 
+   
+}
+#jeans .hover1{
+   border-radius: 10px; 
+   border:1px solid peachpuff;
+   width:100%;
+ 
+
+}
+.hover1:hover {
+transition: transform 0.2s;
+transform: scale(1.02);
+outline:1px solid peachpuff;
+ }
+
+ 
+#anjali_bottom{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:20px 20px;
+    margin-top:60px ;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#anjali_bottom img{
+    width:100%;
+}
+
+/* ****************************************CHARLES********************************** */
+#charles_menssection img{
+    width: 100%;
+    }
+    #charles_menssection img:hover{
+        transform: scale(1.02);
+    }
+    #charles_col1{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap:30px;
+        /* margin-top: 20px;
+        margin-bottom: 20px; */
+    }
+    #charles_col2{
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        gap:30px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    #charles_menssection button{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        border: none;
+        background-color: white;
+    }
+    #charles_col3{
+        display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:20px 20px;
+    margin-top:60px ;
+    margin-left: 10px;
+    margin-right: 10px;
+    }
+
+    /* ****************************************ABHISHEK*********************************** */
+    h5~p{
+        font-size: 11px;
+        color: #333333BF;
+    }
+    .abhi_parentbox >h5{
+        font-size: 12px;
+        font-weight: 550;
+    }
+    #span{
+        color: rgb(0, 145, 255);
+        font-weight: bolder;
+    }
+    #link{
+        color: rgb(0, 145, 255);    
+    }
+    #abhi_parentbox{
+        display: flex;
+        background-color: #f3f3f3;
+        line-height: normal;
+        font-family: sans-serif;
+        padding: 2%;
+    }
+    #abhi_parentbox >div:first-child{
+        display: flex;
+        width: 70%;
+        justify-content: space-evenly; 
+    }
+      #abhi_childdiv{
+        width: 27%;
+        border-left: 1px solid rgb(222, 215, 215);
+        padding-left: 2%;
+        line-height: normal;
+    }
+    #abhi_childdiv > div{
+        width: 58%;
+    }
+    h5~img{
+       margin-left:2px;
+    }
+    #abhi_img{
+        display: grid;
+       grid-template-columns: repeat(2,1fr);
+       gap: 16px;
+    }

@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home & Kitchen - JioMart</title>
+    <script src="https://kit.fontawesome.com/b4a455d26a.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="..\Images\JioMart Tab Image.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/brands.min.css" integrity="sha512-+oRH6u1nDGSm3hH8poU85YFIVTdSnS2f+texdPGrURaJh8hzmhMiZrQth6l56P4ZQmxeZzd2DqVEMqQoJ8J89A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="product_page.css">
+</head>
+<style>
+    #headdiv{
+        width: 100%;
+        height: 40px;
+        background-color: #f3f3f3;
+        display: flex;
+        align-items: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 12px;
+     }
+     #headdiv>a{
+        color: black;
+     }
+/* main product box */
+     #mainprodbox{
+         width: 100%;
+         display: flex;
+         background-color: #ebebec;
+     }
+/* left box css */
+    #mainprodbox #leftbox{
+         width: 18%;
+     }
+     #filterbox{
+         background-color: #ffffff;
+         height: 500px;
+         width: 80%;
+         margin-left: 10px;
+         border-radius: 14px;
+         padding: 15px;
+     }
+     #filterbox>h2{
+         font-family: sans-serif;
+         font-weight: lighter ;
+     }
+     input[type="search"]
+     {
+         height: 40px;
+         font-size: 14px;
+         background-color: rgba(10,21,27,.05);
+         color: #6f7284;
+         border-top-left-radius: 6px;
+         border-bottom-left-radius: 6px;
+         border: none;
+         width: 90%;
+     }
+     #searchbox{
+         width: 100%;
+         display: flex;
+         background-color:  rgba(10,21,27,.05);
+     }
+     #searchbtn{
+         border: none;
+         box-sizing: border-box;
+         border-top-right-radius: 6px;
+         border-bottom-right-radius: 6px;
+         background-color: rgba(10,21,27,.05);
+     }
+     /* #mainprodbox #leftbox>div{
+         width: 90%;
+         background-color:white;
+     } */
+
+/* right box upper banner css */
+     #rightbox{
+         margin-left: 20px;
+         width: 81%;
+     }
+     #bannerimg{
+        width: 100%;
+        height: 200px;
+        padding-bottom: 20px;
+        
+     }
+     @media all and (min-width: 100px) and (max-width: 400px) {
+      
+      #bannerimg{
+         max-width: 100%;
+ 
+      }
+   
+/* >>>>>>>>>>>>>>>tool display<<<<<<<<<<<<<<<<<< */
+     #tooldisplay{
+         display: flex;
+         font-family: sans-serif;
+         align-items: center;
+         margin-bottom: 20px;
+     }
+     #TotProdonPage>span{
+         font-weight: bold;
+         font-size: 18px;
+     }
+     
+     #tooldisplay #sorting{
+         display: flex;
+         margin-left: 400px;
+         position: absolute;
+         align-items: center;
+     }
+     #tooldisplay #sorting button{
+         margin-left: 20px;
+         padding: 5px 16px 5px 16px;
+         cursor: pointer;
+         border-radius: 5px;
+         border: 1px solid #edeef0;
+         background-color: #fff;
+     }
+     #tooldisplay #sorting button:hover{
+         border:1px solid #70cef7;
+         color: #70cef7;
+        font-weight: 100;
+     }
+
+/* >>>>>>>>>>>>>>>>>>>product display box */
+     #productdisplay{
+        margin: auto;
+        background-color: white;
+        box-sizing: border-box;
+        padding-right: 10px;
+        padding-left: 10px;
+        display: block;
+        
+    }
+
+    #productdisplay #displayid{
+        display: block;
+    }
+    #productdisplay h4{
+        font-family: sans-serif;
+        color: rgba(21,27,57,.6);
+        padding-top: 10px;
+        display: block;
+    }
+/*>>>>>>>>>>>>>>> gird box */
+    #gridbox{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 10px;
+    }
+    @media screen and (min-width: 401px) and (max-width: 800px) {
+       
+       #gridbox{
+       grid-template-columns: repeat(4,1fr);
+      
+       }
+     }
+     /* Small screens */
+    /* @media all and (min-width: 100px) and (max-width: 400px) {*/
+        @media screen and (max-width: 840px){
+       #gridbox{
+       grid-template-columns: repeat(3,1fr);
+       }
+     }
+    
+   .maindiv{
+        border: 1px gray;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        border-radius: 10px;
+        padding: 10px;
+        text-align: center;
+    }
+    .divimg{
+        width: 80%;
+        
+    }
+    .divimg>img{
+        width: 100%;
+        margin-left: 80px;
+    }
+    #gridbox h5+.maindiv{
+        align-items: center;
+        display: flex;
+        margin-right:50px;
+        vertical-align: middle;
+    }
+    #gridbox h5{
+        text-align: left;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        overflow: hidden;
+        max-height: 32px;
+        font-family: sans-serif;
+        color: black;
+    }
+    .headdiv{
+        width: 90%;
+        margin: auto;
+        margin-bottom: 0px;
+    }
+    /* #gridbox img{
+        width: 100%;
+    } */
+    #gridbox img:hover{
+      transform: scale(1.05);
+      transition: 0.2s;
+    }
+    #gridbox h5+div>p:first-child{
+        text-decoration: line-through;
+    }
+    .divmrp{
+        display: flex;
+        text-align: center;
+        align-items: center;
+        width: 90%;
+        margin: auto;
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+    .spanmrp,.strikeprice{
+        font-family: sans-serif;
+        font-size: 12px;
+    }
+    .strikeprice{
+        text-decoration: line-through;
+        margin-left: 5px;
+        font-weight: 100;
+    }
+    .newprice{
+        margin-left: 5px;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+    .divbtn{
+        background: #008ecc;
+        width: 80%;
+        margin: auto;
+        font-size: 16px;
+        border-radius: 4px;
+        padding: 0 8px 0 16px;
+        border: 0;
+        color: #fff;
+        font-family: sans-serif;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        line-height: 32px;
+    }
+    #gridbox button{
+        background: #008ecc;
+        width: 100%;
+        font-size: 16px;
+        border-radius: 4px;
+        padding: 0 8px 0 16px;
+        border: 0;
+        color: #fff;
+        font-family: sans-serif;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        line-height: 32px;
+    }
+    .divicon{
+        width: 20%;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.153)
+    }
+
+    .divbtn:hover{
+        background-color:rgb(59, 152, 219);
+    }
+
+    #gridbox button:hover{
+        background-color:rgb(59, 152, 219);
+    }
+
+    * a{
+        text-decoration: none !important;
+    }
+
+    p{
+       font-family: sans-serif;
+       margin-top: 10px;
+       margin-bottom: 10px;
+       color: black;
+    }
+
+    .discdiv{
+        z-index: 9;
+        width: 40px;
+        height: 40px;
+        background-color: red;
+    }
+
+    .prodcategory{
+        display: flex;
+    }
+    #clear{
+        margin-top: 20px;
+        border-radius: 4px;
+        background-color: bisque;
+        border: none;
+        width: 80%;
+        padding: 5px 5px;
+        font-weight: bold;
+    }
+    #clear:hover{
+        background-color:darkgrey;
+    }
+    
+</style>
+<body>
+    <div class="navbox">
+        <div class="nav1">
+            <a href=""><i class="fa-solid fa-bars"></i></a>
+            <div class="logo">
+                <a href="Index.html">
+                <img class="imagelogo" src="https://www.jiomart.com/assets/version1662053821/smartweb/images/jiomart_logo_beta.svg" alt="JioMart, Online Groceries Shop">
+            </a>
+            </div>
+    
+            <div class="search">
+                <input type="text" placeholder="Search essentials, groceries, and more ...">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <a href="# " class="signinlink"><i class="fa-solid fa-user"></i> Sign in / sign up</a>
+            <a href="# " class="signinlink"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+        </div>
+        <div class="menu-bar">
+            <ul>
+            <li><a href=""class="menue"> <i class="fa-sharp fa-solid fa-location-dot"></i> Deliver to </a></li>  
+            <li><a href="">Groceries<i class="fa-solid fa-angle-down"></i></a>
+                <div class="dropdown">
+                <ul>
+                    <div class="listbox">
+                    <a href="product_page_fruits_apple copy.html"><li>Fruits & Vegetables</li></a>
+                    </div>
+                    <div class="listbox">
+                        <a href=""><li>Dairy & Bakery</li></a>
+                    </div>
+                    <div class="listbox">
+                        <a href=""><li>Staples</li></a>
+                    </div>
+                    <div class="listbox">
+                        <a href=""><li>Snacks & Branded Foods</li></a>
+                    </div>
+                    <div class="listbox">
+                        <a href=""><li>Beverages</li></a>
+                    </div>
+                </ul>
+            </div>
+            <li><a href="">Premium Fruits<i class="fa-solid fa-angle-down"></i></a>
+                <div class="dropdown">
+                <ul>
+                    <div class="listbox">
+                    <a href=".\product_page_fruits_apple.html"><li>Apples & Pears</li></a>
+                    </div>
+                    <div class="listbox">
+                        <a href=".\product_page_fruits_avacado.html"><li>Avacado, Peach, Plum</li></a>
+                    </div>
+                    <div class="listbox">
+                        <a href=".\product_page_fruits_BananaMelons.html"><li>Banana, Melons & Coconut</li></a>
+                    </div>
+                    <div class="listbox">
+                        <a href=".\product_page_fruits_CherriesBerries.html"><li>Cherries, Berries & Exotic Fruits</li></a>
+                    </div>
+                    <div class="listbox">
+                        <a href=""><li>Citrus, Mango & Grapes</li></a>
+                    </div>
+                </ul>
+            </div>
+            <li><a href="">Home & Kitchen<i class="fa-solid fa-angle-down"></i></a>
+                <div class="dropdown">
+                <ul>
+                    <div class="listbox">
+                        <li><a href=".\product_page_hk_Home & Kitchen.html">Kitchenware</a></li>
+                    </div>
+                    <div class="listbox">
+                        <li><a href="">Dining</a></li>
+                    </div>
+                    <div class="listbox">
+                        <li><a href=".\product_page_hk_furnishing.html">Furnishing</a></li>
+                    </div>
+                    <div class="listbox">
+                        <li><a href=".\product_page_hk_HomeDecor.html">Home Decor</a></li>
+                    </div>
+                    <div class="listbox">
+                        <li><a href="">Furniture</a></li>
+                    </div>
+                </ul>
+            </div>
+            <li><a href="">Fashion<i class="fa-solid fa-angle-down"></i></a>
+                <div class="dropdown">
+                <ul>
+                    <div class="listbox">
+                        <li><a href="">Men</a></li>
+                    </div>
+                    <div class="listbox">
+                        <li><a href="">Women</a></li>
+                    </div>
+                    <div class="listbox">
+                        <li><a href="">Boys</a></li>
+                    </div>
+                    <div class="listbox">
+                        <li><a href="">Girls</a></li>
+                    </div>
+                    <div class="listbox">
+                        <li><a href="">Junior Boys</a></li>
+                    </div>
+                </ul>
+            </div>
+            <li><a href="">Electronics<i class="fa-solid fa-angle-down"></i></a>
+                <div class="dropdown">
+                <ul>
+                    <div class="listbox">
+                        <li><a href=".\product_page_elect_mobilestest.html">Mobiles & Tablets</a></li>
+                    </div>
+                    <div class="listbox">
+                        <li><a href=".\product_page_elect_tvtest1.html">TV & Speaker</a></li>
+                    </div>
+                    <div class="listbox">
+                        <li><a href=".\product_page_elect_home appliancestest.html">Home Appliances</a></li>
+                    </div>
+                    <div class="listbox">
+                        <li><a href=".\product_page_elect_computertest.html">Computers</a></li>
+                    </div>
+                    <div class="listbox">
+                        <li><a href=".\product_page_elect_cameratest.html">Cameras</a></li>
+                    </div>
+                </ul>
+            </div>
+            <li><a href="">Beauty<i class="fa-solid fa-angle-down"></i></a>
+                <div class="dropdown">
+                <ul>
+                    <div class="listbox">
+                        <li><a href="">Makeup</a></li>
+                    </div>
+                    <div class="listbox">
+                        <li><a href="">Hair</a></li>
+                    </div>
+                    <div class="listbox">
+                        <li><a href="">Skin Care</a></li>
+                    </div>
+                    <div class="listbox">
+                        <li><a href="">Fragrances</a></li>
+                    </div>
+                    <div class="listbox">
+                        <li><a href="">Personal Care</a></li>
+                    </div>
+                </ul>
+            </div>
+            <li><a href="">Fashion<i class="fa-solid fa-angle-down"></i></a>
+                <div class="dropdown">
+                <ul>
+                    <div class="listbox">
+                        <li><a href="">Fine Jewellery</a></li>
+                    </div>
+                    <div class="listbox">
+                        <li><a href="">Jewellery</a></li>
+                    </div>
+                </ul>
+            </div>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>seperate -->
+    <div id="seperator"></div>
+    <!-- product page -->
+    <!-- product page -->
+    /* <!--************1. Collaborators>> change header ***********  --> */
+    <div id="headdiv">
+        <a href="">Home ></a>
+        <a href="">All Categories ></a>
+        <a href="">Home & Kitchen ></a>
+        <a href="">Difuser & Kitchenware </a>
+    </div>
+    /* <!-- main product box --> */
+    <div id="mainprodbox">
+        /* <!-- left of main box --> */
+        <div id="leftbox">
+            <div id="filterbox">
+                <h2>Filters</h2>
+                <p>Categories</p>
+                <div id="searchbox">
+                    <input id="search" type="search" placeholder="Search...">
+                    <button id="searchbtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+    /* <!--************2. Collaborators make your input boxes here ***********  --> */
+                <div class="prodcategory">
+                    <input id="Difuser" type="radio" name="btn" value="Difuser">
+                    <p>Difuser</p>
+                </div>
+                <div class="prodcategory">
+                    <input id="Kitchenware" type="radio" name="btn" value="Kitchenware">
+                    <p>Kitchenware</p>
+                </div>
+        <!--************   ends here       ***********  -->
+                <button id="clear" onclick="clearall">Clear all filters</button>
+        </div>
+        </div>
+        <!-- right of main box -->
+        <div id="rightbox">
+        <!--************3. Collaborators>> change image ***********  -->
+            <div id="bannerimg">
+                <img src="https://www.jiomart.com/images/category/1687/home-kitchen-20220519.jpeg" alt="bannerimg">
+            </div>
+            <div id="tooldisplay">
+                <div id="TotProdonPage">Showing <span id="num"></span> of <span id="totalcount"></span>items</div>
+                <div id="sorting">
+                    Sort by:
+                    <button id="hightolow" onclick="hightolow()">High to Low</button>
+                    <button id="lowtohigh" onclick="lowtohigh()">Low to High</button>
+                    <button id="popular" onclick="popular()">Popularity</button>
+                    <button id="discount" onclick="discount()">Discount</button>
+                </div>
+            </div>
+            <!-- product display -->
+            <div id="productdisplay">
+                <div id="displayid">
+                <h4>All Products</h4>
+                </div>
+                <div id="gridbox">
+
+                    </div>
+                </div>
+                <div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<script>
+// <!--************4. Collaborators>> input product data here ***********  -->
+    var fruitsData = [
+   
+    {
+        name:"Difuser",
+        detail: "Mkd2 Rise Black Ceramic Aroma Oil Diffuser Burner With 10 ml Lemongrass Oil & Three Tea Light Candle" ,
+        image_url:
+        "https://www.jiomart.com/images/product/150x150/rvbwd3dexb/mkd2-rise-black-ceramic-aroma-oil-diffuser-burner-with-10-ml-lemongrass-oil-three-tea-light-candle-product-images-orvbwd3dexb-p590804958-0-202109271201.jpg",
+       
+        strikedoffprice:" 1,247.00" , 
+        price:"275.00",
+    },
+    {
+        name:"Difuser",
+        detail: " Webelkart Premium Plastic Designer Stones Lord Ganesha Wall Clock (Copper, 12 Inch)",
+        image_url:
+        "https://www.jiomart.com/images/product/150x150/rvhvco0d35/webelkart-premium-plastic-designer-stones-lord-ganesha-wall-clock-copper-12-inch-product-images-orvhvco0d35-p591181517-0-202203011247.jpg",
+        
+        strikedoffprice:" 1,999.00",
+        price:"313.00",
+    },
+    { 
+        name:"Difuser",
+        detail: "Webelkart Premium Home Keys Wooden Key Holder",
+        image_url:
+        "https://www.jiomart.com/images/product/150x150/rvckpqoqkb/webelkart-premium-home-keys-wooden-key-holder-product-images-orvckpqoqkb-p591179142-0-202203011032.jpg",
+      
+        strikedoffprice:" 999.00" , 
+        price: " 170.00",
+    },
+    {
+        name:"Difuser",
+        detail: "Eurotex Artificial Grass Carpet Mat for Covering Balcony 2x1 ft (EAG15)" ,
+        image_url:
+        "https://www.jiomart.com/images/product/150x150/rvmq5celtr/eurotex-artificial-grass-carpet-mat-for-covering-balcony-2x1-ft-eag15-product-images-orvmq5celtr-p590593073-0-202108281648.jpg",
+       
+        strikedoffprice:"375.00", 
+        price:" 149.00",
+    },
+    {
+        name:"Kitchenware",
+        detail :"Vegetable Cutter/Chopper(450ml) with 3 Blades For",
+        image_url:
+        "https://www.jiomart.com/images/product/150x150/rv22zm3q72/vegetable-cutter-chopper-450-ml-with-3-blades-for-kitchen-quick-chopper-product-images-orv22zm3q72-p592347241-0-202207041433.jpg",
+       
+        strikedoffprice:" 499.00",
+        price:" 165.00",
+    },
+    {
+        name:"Kitchenware",
+        detail :"Kreyam's Turbo blue Plastic Vegetable & Fruit Chopper",
+        image_url:
+        "https://www.jiomart.com/images/product/150x150/rvr26subed/kreyam-s-turbo-chopper-blue-900-ml-vegetable-fruit-chopper-product-images-orvr26subed-p590794146-0-202109170840.jpg",
+       
+        strikedoffprice:" 799.00",
+        price:"239.00",
+    },
+   
+    {
+        name:"Kitchenware",
+        detail
+         :"Faveritor Black Square Airtight Palstic Container 110 ml FormData",
+        image_url:
+        "https://www.jiomart.com/images/product/150x150/rvfruvgqtx/faverito-black-square-airtight-plastic-container-1100-ml-for-kitchen-storage-set-of-12-product-images-orvfruvgqtx-p591021450-0-202201272057.jpg",
+       
+        strikedoffprice:" 1,999.00",
+        price:"799.00",
+    },
+    { 
+    name:"Kitchenware",
+
+        detail:" JISUN Lemon Squeezer & Cheese Grater & Egg Wisk & Potato Masher & Roti Chimta for Kitchen",
+        image_url:
+        "https://www.jiomart.com/images/product/150x150/rvtxplfljp/jisun-lemon-squeezer-cheese-grater-egg-wisk-potato-masher-roti-chimta-for-kitchen-product-images-orvtxplfljp-p592461740-0-202207090642.jpg",
+       
+        strikedoffprice:" 849.00", 
+        price:"299.00",
+    },
+    {
+        name:"furniture",
+        detail:" Home One Blue Plastic Foldable Table 63x36.5x24 cm ",
+        image_url:
+        " https://www.jiomart.com/images/product/150x150/492336474/home-one-blue-plastic-foldable-table-63x36-5x24-cm-product-images-o492336474-p590945287-0-202205172325.jpg",
+       
+        strikedoffprice: "1,099.00",
+        price: " 499.00",
+    },
+    { 
+        name:"Dining",
+        detail:  "Ivanka Pink Plastic Insulated Cassrole 1000 ml",
+        image_url:
+        "https://www.jiomart.com/images/product/150x150/491934380/ivanka-pink-plastic-insulated-cassrole-1000-ml-product-images-o491934380-p590363744-0-202203252301.jpg",
+       
+        strikedoffprice:"  306.00",
+        price:"  169.00",
+    },
+    {
+        name:"furnishing",
+        detail: "Home One Multicolour Cotton Face Towel Set 28x28 cm (3 pcs)",
+        image_url: 
+        "https://www.jiomart.com/images/product/150x150/491052421/home-one-multicolour-cotton-face-towel-set-28x28-cm-3-pcs-product-images-o491052421-p590142333-0-202203252309.jpg",
+         
+        strikedoffprice:" 75.00",
+        price:" 59.00",
+    },
+    {
+        name:"furnishing",
+        detail: "Happy Living YD Check Purple Cotton Face Towel 30x30 cm",
+        image_url: 
+        "https://www.jiomart.com/images/product/150x150/491638812/happy-living-yd-check-purple-cotton-face-towel-30x30-cm-product-images-o491638812-p590032887-0-202207271737.jpg",
+        
+        strikedoffprice:" 99.00",
+        price:" 49.00",
+    },
+
+    ];
+// <!--************   ends here    ***********  -->
+    display(fruitsData);
+    document.getElementById("num").append(fruitsData.length);
+    // Search sorting>>>>>>>>>>>>>>>
+    document.getElementById("searchbtn").addEventListener("click",search);
+    function search(){
+        document.getElementById("num").innerText="";
+        var searchItem = document.getElementById("search").value;
+        var out = fruitsData.filter(function(ele){
+            if(searchItem===""){
+                return 1;
+            }else{
+                return ele.name===searchItem;
+            }
+        })
+            display(out)
+            totalproductonpage=out.length;
+            document.getElementById("num").append(totalproductonpage);
+    }
+    
+    // category sorting>>>>>>>>>>>>>>>>>>>>>>
+    document.getElementById("Difuser").addEventListener("click",select1);
+    function select1(){
+        document.getElementById("num").innerText="";
+        var selected = document.getElementById("Difuser").value;
+        console.log(selected)
+        var out = fruitsData.filter(function(ele){
+            if(selected===""){
+                return 1;
+            }else{
+                return ele.name===selected; 
+            } 
+        })
+        display(out)
+        totalproductonpage=out.length;
+        document.getElementById("num").append(totalproductonpage);
+    }
+    document.getElementById("Kitchenware").addEventListener("click",select2);
+    function select2(){
+        document.getElementById("num").innerText="";
+        var selected = document.getElementById("Kitchenware").value;
+        console.log(selected)
+        var out = fruitsData.filter(function(ele){
+            if(selected===""){
+                return 1;
+            }else{
+                return ele.name===selected; 
+            } 
+        })
+            display(out)
+            totalproductonpage=out.length;
+            document.getElementById("num").append(totalproductonpage);
+    }
+
+//    high low price sorting>>>>>>>>>>>>>>>>>>>
+    var sorted =[];
+    fruitsData.forEach(function(ele,ind){
+        sorted.push(ele);
+    });
+    
+    function hightolow(){
+        sorted.sort(function(a,b){
+            return b.price-a.price;
+        })
+        display(sorted);
+    }
+   
+    function lowtohigh(){
+        sorted.sort(function(a,b){
+            return a.price-b.price;
+        })
+        display(sorted);
+    }
+// clear filters>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    document.getElementById("clear").addEventListener("click",clearall);
+    function clearall(){
+        document.getElementById("num").innerText="";
+        display(fruitsData);
+        totalproductonpage=fruitsData.length;
+        document.getElementById("num").append(totalproductonpage);
+    }
+    document.getElementById("clear").onclick = function() {
+        var radio = document.querySelector('input[type=radio][name=btn]:checked');
+        radio.checked = false;
+    }
+    // display(fruitsData);
+function display(fruitsData){
+    document.getElementById("gridbox").innerText="";
+
+    fruitsData.map(function(ele,ind){
+    // <<<<<<<<<<<< New Element Creation >>>>>>>>>>>>>>>>>>>>
+        var divmain = document.createElement("div");
+        divmain.classList.add("maindiv");
+        var divimg = document.createElement("div"); 
+        divimg.classList.add("divimg");
+        var anchor = document.createElement("a")
+        var image = document.createElement("img");
+        var headdiv = document.createElement("div")
+        headdiv.classList.add("headdiv");
+        var h5 = document.createElement("h5");
+        var divmrp = document.createElement("div");
+        divmrp.classList.add("divmrp");
+        var strikeprice = document.createElement("p");
+        strikeprice.classList.add("strikeprice");
+        var newprice = document.createElement("p");
+        newprice.classList.add("newprice");
+        var spanmrp = document.createElement("span");
+        spanmrp.classList.add("spanmrp")
+        var divbtn = document.createElement("div");
+        divbtn.classList.add("divbtn")
+        var divicon = document.createElement("div");
+        divicon.classList.add("divicon");
+        var span1 = document.createElement("span");
+        var span2 = document.createElement("span");
+        var btn = document.createElement("button");
+        // var disc = document.createElement("div");
+        // discdiv.classList.add("discdiv");
+        // var spandisc = document.createElement("span")
+        // spandisc.classList.add("spandiscount");
+        
+        // spandisc.innerText="14% off" //take value from array
+        // disc.append(spandisc)
+
+    // <<<<<<<<<<<< Object Input Values >>>>>>>>>>>>>>>>>>>>
+        anchor.href="";
+        span2.innerHTML='<i class="fa-thin fa-plus"></i>'
+        image.setAttribute("src",ele.image_url)
+        h5.innerText = ele.detail;
+        spanmrp.innerText="M.R.P.:"
+        strikeprice.innerText = "₹"+ele.strikedoffprice;
+        newprice.innerText = "₹"+ele.price;
+        span1.innerText="Add to cart"
+    // <<<<<<<<<<<< Append >>>>>>>>>>>>>>>>>>>>
+        divimg.append(image);
+        divicon.append(span2);
+        btn.append(span1,divicon);
+        divmrp.append(spanmrp,strikeprice,newprice)
+        divbtn.append(btn);
+        headdiv.append(h5)
+        anchor.append(image,headdiv)
+        divmain.append(anchor,divmrp,divbtn)
+        document.getElementById("gridbox").append(divmain);
+        btn.addEventListener("click",function(){
+            addtocart(ind);
+        })
+    })
+}
+
+// total product on page count>>>>>>>>>>>>>>
+// document.getElementById("num").append(totalproductonpage);
+document.getElementById("totalcount").append(fruitsData.length);
+
+// local storage to add to cart>>>>>>>>>>>>>>>>>>>>>>
+var cart = JSON.parse(localStorage.getItem("cartitems")) || [];
+function addtocart(i){
+    event.preventDefault();
+    var prod = fruitsData.filter(function(ele,ind){
+        return ind===i;
+    })
+    cart.push(prod[0]);
+    alert("Item successfully added to cart")
+    localStorage.setItem("cartitems",JSON.stringify(cart));
+    
+}
+
+</script>

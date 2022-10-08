@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="payment.css">
+</head>
+
+<body>
+    <div id="navbar">
+        <div onclick="refresh()">
+            <div>JioMart</div>
+            <div>BETA</div>
+        </div>
+    </div>
+    <div id="updateAfterpy">
+        <h1 style="margin: 10px 10px 10px 13% ; font-size: 22px;">Payment Details</h1>
+        <div id="paymContainer">
+            <div id="paysubcontiner">
+                <p>WALLET</p>
+                <div><input class="setinp" type="radio" name="select" value="walletPay" onclick="radioBtns()"> <span
+                        id="image"><img src="https://www.jiomart.com/assets/pgicon/Paytm_lo.png"
+                            alt=""></span> <span style="top: 0px;" class="setspan">Paytm</span></div>
+                          
+                <div><input class="setinp" type="radio" name="select" value="walletPhone" onclick="radioBtns()"> <span
+                        id="image"><img src="https://www.jiomart.com/assets/pgicon/Phone_Pay_lo.png"
+                            alt=""></span> <span class="setspan">PhonePe / UPI</span></div>
+                           
+                <div><input class="setinp" type="radio" name="select" value="walletjio" onclick="radioBtns()"> <span
+                        id="image"><img
+                            src="https://www.jiomart.com/msassets/images/jio-money.png"
+                            alt=""></span> <span class="setspan">JioMoney</span></div style="top: 0px;">
+                         
+                <div><input class="setinp" type="radio" name="select" value="walletM" onclick="radioBtns()"> <span
+                        id="image"><img src="https://www.jiomart.com/assets/pgicon/Mobikwik_lo.png"
+                            alt=""></span>
+                    <span class="setspan">
+                        MobiKwik</span>
+                </div>
+                
+                <div><input class="setinp" type="radio" name="select" id="wallet" onclick="radioBtns()" /> <span
+                        id="image"><img
+                            src="https://www.jiomart.com/assets/pgicon/Free_Charge_lo.png"
+                            alt=""></span> <span class="setspan">Freecharge Pay Later | UPI | Wallet</span></div>
+                <div style="margin-bottom: 60px;"><input class="setinp" type="radio" name="select" value="cod"
+                        onclick="radioBtns()"> <span id="image"><img
+                            src="https://www.jiomart.com/assets/pgicon/COD.png" alt=""></span> <span
+                        class="setspan">Cash on Delivery</span></div>
+
+            </div>
+            <div id="totalinfo">
+                <h2 style="font-size: 22px;">Payment Details</h2>
+                <div>
+                    <p>MRP Total: </p>
+                    <span id="mrp"></span>
+                </div>
+                <hr>
+                <div>
+                    <p>Product Discount: </p>
+                    <span id="dp"></span>
+                </div>
+                <hr>
+                <div>
+                    <p style="color: black;">Total Amount: </p>
+                    <span id="fP"></span>
+                </div>
+                <hr>
+            </div>
+        </div>
+
+        <div id="addUrl"></div>
+    </div>
+    <div id="orderMsg">
+        <span id="oPlaced"> <span id="oPlacedtxt"> Order placed successfully</span><span class="material-icons">task_alt</span> </span>
+        <h2> <span>Your order number :</span> <span id="orderNo"></span></h2>
+        <button onclick="gotohome()" id="hombtn">Continue Shopping</button>
+    </div>
+
+    <script src="payment.js"></script>
+</body>
+
+</html>

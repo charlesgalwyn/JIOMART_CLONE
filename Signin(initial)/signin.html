@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .container {
+           display: flex;
+          justify-content: left ;
+          gap:20%;
+          height:20%;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+         rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+         border-radius: 20px;
+         margin-left: 5%;
+         margin-right: 5%; 
+        }
+        h2{
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: -5px;
+        }
+        img{
+          
+          width: 100%;
+          height:100%;
+          border-top-left-radius:20px;
+          border-bottom-left-radius:20px;
+           
+        }
+
+        
+        form{
+            
+            height:100%;
+            width: 100%;
+            
+           
+        }
+        
+        input[type="tel"]{
+            width: 100%;
+        padding: 12px;
+        box-sizing: border-box;
+        margin-top: 10px;
+        margin-bottom: 25px;
+        border-radius: 4px;
+        border: none;
+        border: 0.5px solid rgb(185, 183, 183);
+        }
+        input[type="password"]{
+          width: 90%;
+        padding: 12px;
+        box-sizing: border-box;
+        margin-top: 10px;
+        margin-bottom: 25px;
+        border-radius: 4px;
+        border: none;
+        border: 0.5px solid rgb(185, 183, 183);
+        }
+        button{
+          width: 20%;
+          height:7%;
+          color:white;
+          background-color: #008ecc;
+          border-radius: 7px;
+          border:none;
+          margin-left: 35%;
+          margin-right:40%;
+        }
+        button:hover {
+       background-color: crimson;
+      color: white;
+      font-weight: bold;
+}
+       
+        .clickbutton {
+            border-radius: 50%;
+            height:10%;
+            width: 17%;
+            direction: center;
+            margin-left: 40%;
+            margin-left: 40%;
+            margin-top: 10%;
+            background-color:#008ecc ;
+            border:none;
+            color:white;
+            font-size: 30px;
+        }
+        .clickbutton:hover {
+       background-color: crimson;
+      color: white;
+      font-weight: bold;
+}
+        .footerDiv{
+            text-align: center;
+        }
+        a{
+            color:red;
+        }
+           
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="anjali_mainDiv">
+      <img src=https://www.jiomart.com/msassets/images/login-banner.jpg alt="" />
+      </div>
+      <div class="signupDiv">
+      <form>
+        <h2>Sign in </h2>
+        <p class="para">
+            Sign in to access your Orders, Offers and Wishlist.
+         
+        </p>
+       <span>
+        +91 |
+       </span>
+        <input
+      
+          type="tel"
+          id="number"
+          placeholder="Enter your mobile no"
+          
+        />
+        
+        <button class="clickbutton"> 
+            
+          >
+        </button>
+        
+      </form>
+      </div>
+      
+    </div>
+    <div class="footerDiv">
+        <p class="para">
+            By continuing you agree to our
+            <a href="#">Terms of Service</a> and <br>
+            <a href="#">Privacy and Legal Policy</a>
+          </p>
+       
+        </div>
+  </body>
+</html>
+<script>
+
+    document.querySelector("button").addEventListener("click",signin);
+    var singinArr = JSON.parse(localStorage.getItem("user_data"))||[];
+function signin() {
+  event.preventDefault();
+  var mob=document.getElementById("number").value;
+  var mob_flag=false;
+  singinArr.map(function(element,index) {
+    if(element.mob==mob) {
+        mob_flag=true;
+    }
+    
+  if(mob_flag) {
+    document.querySelector("form").innerHTML="";
+    var h1=document.createElement("h1");
+    h1.innerText="PLEASE ENTER YOUR PASSWORD";
+    var pass=document.createElement("input");
+    pass.setAttribute("type","password");
+    var button=document.createElement("button");
+    button.innerText="SIGN IN";
+    button.addEventListener("click",()=>{
+        if(element.password==pass.value) {
+            window.location.href="dummy.html";
+            alert("signin successful");
+        }
+        else {
+            alert("plesae enter correct password");
+        }
+    });
+    document.querySelector("form").append(h1,pass,button);
+  }
+  });
+  document.getElementById("number").value = "";
+
+if(!mob_flag) {
+        alert("please enter correct details")
+    }
+    
+ 
+ 
+ //
+}
+</script>
